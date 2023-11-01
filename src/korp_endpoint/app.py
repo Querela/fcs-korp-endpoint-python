@@ -44,4 +44,21 @@ def make_app():
     return app
 
 
+def make_gunicorn_app():
+    """Setup logging to display on stdout with gunicorn logging level."""
+
+    import logging
+
+    # https://trstringer.com/logging-flask-gunicorn-the-manageable-way/
+
+    gunicorn_logger = logging.getLogger("gunicorn.error")
+
+    logging.basicConfig(
+        level=gunicorn_logger.level,
+        format="[%(levelname).1s][%(name)s:%(lineno)s] %(message)s",
+    )
+
+    return make_app()
+
+
 # ---------------------------------------------------------------------------

@@ -31,6 +31,18 @@ To just run the application:
 python3 -m korp_endpoint
 ```
 
+### Run with Docker
+
+First build the docker image:
+```bash
+docker build --progress=plain -t korpy .
+```
+
+Then run (default port specified in envvar `PORT` is 5000):
+```bash
+docker run --rm -it -p 5000:5000 korpy
+```
+
 ## Configuration & Modification
 
 The file [`src/korp_endpoint/app.py`](src/korp_endpoint/app.py) describes how to set or overwrite SRU/FCS configuration parameters. It also shows how to expose the `app` object for [WSGI](https://wsgi.readthedocs.io/en/latest/index.html).
