@@ -27,7 +27,8 @@ def make_app():
             # SRUServerConfigKey.SRU_TRANSPORT: "http",
             # SRUServerConfigKey.SRU_HOST: "127.0.0.1",
             # SRUServerConfigKey.SRU_PORT: "8080",
-            # SRUServerConfigKey.SRU_DATABASE: "/",
+            # required information
+            SRUServerConfigKey.SRU_DATABASE: "korp",
             #
             SRUServerConfigKey.SRU_ECHO_REQUESTS: "true",
             SRUServerConfigKey.SRU_NUMBER_OF_RECORDS: 250,
